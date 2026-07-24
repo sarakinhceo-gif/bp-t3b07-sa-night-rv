@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img">
-  <metadata>BPaaS site identity b8ae903c3f94df30</metadata>
-  <rect width="64" height="64" rx="11" fill="hsl(118 73% 39%)"/>
-  <path d="M27 0h37v64H13Z" fill="hsl(310 79% 61%)" opacity="0.82"/>
-  <g transform="rotate(71 32 32)" opacity="0.42"><rect x="16" y="16" width="32" height="32" rx="5" fill="none" stroke="#101418" stroke-width="7" transform="rotate(45 32 32)"/></g>
-  <text x="32" y="39" text-anchor="middle" fill="#101418" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" letter-spacing="0">SN</text>
+  <title>상암 유흥 후기</title>
+  <rect width="64" height="64" rx="10" fill="hsl(118 68% 23%)"/>
+  <path d="M64 0v26L38 0Z" fill="hsl(187 68% 65%)" opacity="0.16"/>
+  <g transform="rotate(270 32 32)"><g fill="none" stroke="hsl(118 24% 96%)" stroke-width="7" stroke-linecap="round"><path d="M32 14a18 18 0 0 1 18 18"/><path d="M32 50a18 18 0 0 1-18-18"/></g><path d="M50 32a18 18 0 0 1-18 18" fill="none" stroke="hsl(187 68% 65%)" stroke-width="7" stroke-linecap="round"/></g>
 </svg>
