@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (2/2) · t3b07-sa-night-rv</title>
+  <meta name="description" content="t3b07-sa-night-rv에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://sangam-night-guide.program-school.online/posts-2.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ /* Reset & Base */
+ *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+ html { scroll-behavior: smooth; }
+ body {
+ font-family: 'Georgia', 'Times New Roman', 'Noto Serif KR', serif;
+ background-color: #1a1a1a;
+ color: #fafaf5;
+ line-height: 1.8;
+ letter-spacing: 0.02em;
+ -webkit-font-smoothing: antialiased;
+ }
+
+ /* Typography */
+ h1, h2, h3, h4 { font-weight: 700; letter-spacing: 0.05em; }
+ h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem; }
+ h2 { font-size: 2.2rem; margin-bottom: 2rem; border-bottom: 1px solid #c5a880; padding-bottom: 0.5rem; }
+ h3 { font-size: 1.6rem; margin-bottom: 1rem; }
+ p { margin-bottom: 1.5rem; font-size: 1.1rem; }
+ a { color: #c5a880; text-decoration: none; transition: opacity 0.3s; }
+ a:hover { opacity: 0.8; }
+
+ /* Container */
+ .container {
+ max-width: 720px;
+ margin: 0 auto;
+ padding: 0 72px;
+ }
+
+ /* Header */
+ header {
+ padding: 72px 0 48px;
+ border-bottom: 1px solid rgba(197, 168, 128, 0.3);
+ }
+ .header-inner {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ }
+ .logo { font-size: 1.8rem; font-weight: 700; letter-spacing: 0.1em; color: #c5a880; }
+ .logo span { color: #fafaf5; }
+
+ /* Navigation */
+ nav { position: relative; }
+ .nav-list {
+ display: flex;
+ list-style: none;
+ gap: 48px;
+ }
+ .nav-list a {
+ font-size: 1rem;
+ letter-spacing: 0.08em;
+ text-transform: uppercase;
+ color: #fafaf5;
+ }
+ .nav-list a:hover { color: #c5a880; }
+
+ /* Hamburger Menu */
+ .hamburger {
+ display: none;
+ flex-direction: column;
+ cursor: pointer;
+ background: none;
+ border: none;
+ padding: 8px;
+ }
+ .hamburger span {
+ width: 28px;
+ height: 2px;
+ background: #c5a880;
+ margin: 4px 0;
+ transition: 0.3s;
+ }
+
+ /* Hero Section */
+ .hero {
+ position: relative;
+ padding: 120px 0;
+ margin-bottom: 120px;
+ background: linear-gradient(135deg, #1a1a1a 0%, #2a1f14 40%, #1a1a1a 100%);
+ border-bottom: 1px solid #c5a880;
+ border-top: 1px solid #c5a880;
+ }
+ .hero::before {
+ content: '';
+ position: absolute;
+ top: 0; left: 0; right: 0; bottom: 0;
+ background: linear-gradient(180deg, rgba(197,168,128,0.05) 0%, transparent 50%, rgba(197,168,128,0.08) 100%);
+ pointer-events: none;
+ }
+ .hero .container { position: relative; z-index: 1; }
+ .hero h1 { font-size: 4rem; }
+ .hero p { font-size: 1.3rem; color: #d4c5a8; max-width: 600px; }
+ .hero .accent-line {
+ width: 80px;
+ height: 2px;
+ background: #c5a880;
+ margin: 2rem 0;
+ }
+
+ /* Section */
+ section { margin-bottom: 120px; }
+
+ /* Drop Cap */
+ .drop-cap::first-letter {
+ float: left;
+ font-size: 4rem;
+ line-height: 1;
+ padding-right: 12px;
+ padding-top: 4px;
+ color: #c5a880;
+ font-weight: 700;
+ }
+
+ /* Review Cards */
+ .review-grid {
+ display: flex;
+ flex-direction: column;
+ gap: 48px;
+ }
+ .review-card {
+ padding: 48px 0;
+ border-bottom: 1px solid rgba(197, 168, 128, 0.15);
+ }
+ .review-card:last-child { border-bottom: none; }
+ .review-header {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin-bottom: 24px;
+ }
+ .review-author { font-size: 1.2rem; font-weight: 700; letter-spacing: 0.05em; }
+ .review-meta { color: #a09080; font-size: 0.9rem; }
+ .review-stars { color: #c5a880; letter-spacing: 0.2em; font-size: 1.2rem; }
+ .review-content { font-size: 1.05rem; line-height: 1.9; color: #e0d8c8; }
+
+ /* Stats Section */
+ .stats-grid {
+ display: flex;
+ gap: 48px;
+ justify-content: space-between;
+ padding: 48px 0;
+ border-top: 1px solid #c5a880;
+ border-bottom: 1px solid #c5a880;
+ }
+ .stat-item { text-align: center; flex: 1; }
+ .stat-number { font-size: 3rem; font-weight: 700; color: #c5a880; }
+ .stat-label { font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; color: #a09080; margin-top: 8px; }
+
+ /* Contact Section */
+ .contact-info {
+ padding: 48px;
+ border: 1px solid #c5a880;
+ text-align: center;
+ }
+ .contact-info p { margin-bottom: 0.5rem; }
+ .contact-phone {
+ font-size: 2rem;
+ font-weight: 700;
+ color: #c5a880;
+ letter-spacing: 0.1em;
+ }
+
+ /* Footer */
+ footer {
+ padding: 72px 0;
+ border-top: 1px solid rgba(197, 168, 128, 0.2);
+ text-align: center;
+ color: #a09080;
+ font-size: 0.9rem;
+ }
+ footer a { color: #c5a880; }
+
+ /* Responsive */
+ @media (max-width: 768px) {
+ .container { padding: 0 24px; }
+ header { padding: 48px 0 24px; }
+ 
+ .hamburger { display: flex; }
+ .nav-list {
+ display: none;
+ position: absolute;
+ top: 100%;
+ right: 0;
+ flex-direction: column;
+ background: #1a1a1a;
+ border: 1px solid #c5a880;
+ padding: 24px;
+ gap: 24px;
+ min-width: 200px;
+ z-index: 100;
+ }
+ .nav-list.active { display: flex; }
+ 
+ h1 { font-size: 2.2rem; }
+ h2 { font-size: 1.6rem; }
+ .hero { padding: 80px 0; margin-bottom: 80px; }
+ .hero h1 { font-size: 2.5rem; }
+ .hero p { font-size: 1.1rem; }
+ 
+ .stats-grid { flex-direction: column; gap: 32px; }
+ .stat-number { font-size: 2.5rem; }
+ 
+ .review-card { padding: 32px 0; }
+ .review-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+ 
+ .contact-info { padding: 32px 16px; }
+ .contact-phone { font-size: 1.5rem; }
+ 
+ section { margin-bottom: 80px; }
+ }
+
+ /* Fine borders */
+ .fine-border { border: 1px solid #c5a880; }
+ .fine-border-top { border-top: 1px solid #c5a880; }
+ .fine-border-bottom { border-bottom: 1px solid #c5a880; }
+
+ /* Generous spacing */
+ .gap-48 { gap: 48px; }
+ .padding-72 { padding: 72px 0; }
+ .section-gap-120 { margin-bottom: 120px; }
+ </style>
+  <meta property="og:title" content="글 목록 (2/2) · t3b07-sa-night-rv">
+  <meta property="og:description" content="t3b07-sa-night-rv에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://sangam-night-guide.program-school.online/posts-2.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <div class="container header-inner">
+ <div class="logo">NIGHT<span>GUIDE</span></div>
+ <nav>
+ <button class="hamburger" onclick="toggleMenu()" aria-label="메뉴 열기">
+ 
+ 
+ 
+ </button>
+ <ul class="nav-list" id="navMenu">
+ <li><a href="#reviews">리뷰</a></li>
+ <li><a href="#insights">인사이트</a></li>
+ <li><a href="#contact">문의</a></li>
+ </ul>
+ </nav>
+ </div>
+ </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 38개 · 2/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0002.html">상암 유흥 후기 의심 말고 확인하는 상수 마사지 추천정보 안내</a>
+        <p class="post-item__summary">많은 분들이 마사지 서비스를 단순한 유흥의 일종으로 오해하곤 하지만, 사실은 지친 심신을 회복하는 힐링 과정의 일부입니다. 상암 유흥 후기 같은 정보 속에서 잘못된 선입견을 갖기보다는 정확한 정보를</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0003.html">상암 유흥 후기 정보보다 확실한 망원 노래방 추천정보 정리</a>
+        <p class="post-item__summary">즐거운 모임을 계획할 때 가장 먼저 고려해야 할 조건은 참여 인원과 분위기에 적합한 공간입니다. 상암 유흥 후기 내용에만 집중하면 오히려 망원 지역의 고유한 매력을 가진 노래방들을 놓치기 쉽습니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0004.html">상암 유흥 후기 궁금할 때 읽는 홍대 노래방 추천정보 노하우</a>
+        <p class="post-item__summary">여러분은 노래방을 선택할 때 가장 먼저 무엇을 확인하고 계신가요? 상암 유흥 후기 따위의 단편적인 정보에 의존하기보다 본인만의 비교 기준을 세우는 것이 우선되어야 합니다. 홍대는 업체가 매우 밀집해</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0005.html">공덕 셔츠룸 선택 가이드: 상암 유흥 후기 신뢰도 판별법</a>
+        <p class="post-item__summary">상암 지역의 다양한 유흥 관련 정보를 탐색하다 보면, 실제 경험을 바탕으로 한 후기들이 중요한 판단 근거가 됩니다. 특히 공덕 셔츠룸을 찾고자 할 때, 수많은 후기 속에서 신뢰할 수 있는 정보를 골</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0006.html">연남 유흥, 가격으로 현명하게 고르는 법 (상암 유흥 후기 비교)</a>
+        <p class="post-item__summary">상암 지역의 유흥 정보 탐색은 종종 연남 지역의 다양한 선택지로 이어지곤 합니다. 연남에서 만족스러운 유흥을 즐기기 위해 가격이라는 중요한 기준을 어떻게 활용할 수 있을지 알아보겠습니다. 가격만으로</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0007.html">마곡 가라오케 예약, 실패 없는 절차 파헤치기 (상암 유흥 후기)</a>
+        <p class="post-item__summary">상암 지역의 유흥 정보를 찾는 분들이 마곡 지역의 가라오케를 고려할 때, 가장 흔하게 겪는 어려움 중 하나는 예약 과정에서 발생하는 예상치 못한 문제들입니다. 만족스러운 경험을 위해서는 실패하는 지</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0008.html">마곡 유흥, 위치와 접근성 체크리스트 (상암 유흥 후기)</a>
+        <p class="post-item__summary">상암 지역의 다양한 유흥 정보를 탐색하는 과정에서 마곡 지역으로 눈을 돌리는 분들이 많습니다. 마곡에서 만족스러운 유흥 경험을 하기 위해서는 무엇보다 위치와 접근성이 중요한 요소로 작용합니다. 방문</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0009.html">상암 유흥 후기 말고 살펴보는 합정 노래방 추천정보의 기준</a>
+        <p class="post-item__summary">평소 퇴근길에 동료들과 가벼운 기분으로 노래방을 찾았다가 낭패를 본 경험이 있다면 장소 선정의 중요성을 실감했을 것입니다. 상암 유흥 후기 같은 정보에만 의존하기보다는 지역별 특색을 면밀히 살피는 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0010.html">상암 유흥 후기 너머 연남 클럽 추천정보를 활용하는 시간대</a>
+        <p class="post-item__summary">많은 이들이 연남동 지역을 방문할 때 주말 저녁이면 어디든 사람이 붐빌 것이라는 착각을 하곤 합니다. 하지만 상암 유흥 후기 등으로 접하는 피상적인 정보와 달리 실제 클럽의 활기는 시간대에 따라 극</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0011.html">상암 유흥 후기 내용을 바탕으로 살펴보는 합정 셔츠룸 추천정보 가이드</a>
+        <p class="post-item__summary">상암 유흥 후기 사례를 살펴보면 즐거운 시간을 보내기 위해 반드시 충족해야 할 몇 가지 조건이 있습니다. 단순히 공간의 화려함만 따질 것이 아니라 서비스의 질과 안전성을 우선순위에 두어야 합니다. </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/guide-001-a5v2b5.html">상암 유흥 후기</a>
+        <p class="post-item__summary">상암 지역은 미디어 단지와 비즈니스 타운이 밀집해 있어 퇴근 후 직장인들의 회식이나 모임이 매우 빈번하게 발생하는 장소입니다. 이 지역에서 유흥을 즐기고자 하는 방문객들은 주로 깔끔하고 격식 있는 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/guide-002-1dxl7dr.html">유흥 해결 방법 총정리</a>
+        <p class="post-item__summary">---</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/juice-1.html">상암 유흥 후기 관련 정보 안내</a>
+        <p class="post-item__summary">상암 지역에서 유흥 관련 정보를 찾고 계신다면, 해당 지역의 특징과 분위기를 종합적으로 이해하는 것이 중요합니다. 후기를 통해 얻는 정보는 단순한 만족도를 넘어, 해당 지역의 전반적인 서비스 수준과</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/juice-2.html">상암 유흥 후기 정보</a>
+        <p class="post-item__summary">상암 지역의 유흥가 관련 후기를 종합하여 안내합니다. 상암동 일대는 다양한 야간 문화 시설이 밀집되어 있으며, 방문객들은 주로 클럽과 나이트클럽에서의 분위기를 평가합니다. 후기를 통해 상암 지역의 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-1.html">상암 유흥 후기</a>
+        <p class="post-item__summary">상암 지역은 저녁이 되면 다채로운 유흥 문화가 펼쳐지는 곳으로 많은 이들의 발길을끈다. 이곳을 찾고자 하는 사람들이 주로 궁금해하는 점은 어디가 조용하고 편안한 분위기인지이며, 어떤 종류의 프로그램</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-2.html">normal 2</a>
+        <p class="post-item__summary">상암 유흥 업소들은 다양한 형태와 크기, 그리고 각기 다른 분위기를 제공합니다. 이러한 업소들은 일반적으로 밤에 활발하게 운영되며, 방문객들은 다양한 엔터테인먼트와 서비스를 즐길 수 있습니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-3.html">상암 유흥 후기 가이드</a>
+        <p class="post-item__summary">상암 지역은 다양한 nightlife 문화가 형성되어 있으며, 많은 방문객이 이곳의 분위기를 찾고 있습니다. 유흥 후기를 검색하는 과정에서는 일반적인 안내 문헌과 지역별 특징을 이해하는 것이 중요합</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/qa-002-a5v2b5.html">상암 유흥 후기 처음 알아볼 때 실제로 많이 묻는 질문 5가지</a>
+        <p class="post-item__summary">상암 지역에서 유흥업소를 처음 접하시는 분들이라면 어떤 후기를 찾아봐야 할지, 어떤 정보를 얻어야 할지 막막하실 수 있습니다. 수많은 정보 속에서 자신에게 맞는 업소를 선택하기 위해 꼭 알아두어야 </p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <span class="pager__current">2</span>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
